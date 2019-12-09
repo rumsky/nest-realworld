@@ -144,3 +144,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 `$ npm install --save @nestjs/passport passport passport-local`
 
 `$ npm install --save-dev @types/passport-local`
+
+
+# Roadmap
+- Env Configuration
+- Hot reload (Webpack)
+- OpenAPI (Swagger)
