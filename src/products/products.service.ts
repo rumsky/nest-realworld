@@ -2,11 +2,13 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Product } from './products.model';
+import { ConfigService } from 'src/config/config.service';
 
 @Injectable()
 export class ProductsServive {
   constructor(
     @InjectModel('Product') private readonly productModel: Model<Product>,
+    private readonly configService: ConfigService,
   ) {}
   private products: Product[] = [];
 
@@ -45,5 +47,9 @@ export class ProductsServive {
       throw new NotFoundException('Could not find product.');
     }
     return product;
+  }
+
+  getEnv() {
+    return this.configService.get('DATABASE_PASSWORD');
   }
 }

@@ -14,6 +14,7 @@ import { LoggerMiddleware } from './common/middlewares/logger.middleware';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TodosModule } from './todos/todos.module';
+import { ConfigModule } from './config/config.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { TodosModule } from './todos/todos.module';
     AuthModule,
     UsersModule,
     TodosModule,
+    ConfigModule,
   ],
   controllers: [AppController, UsersController],
   providers: [AppService],

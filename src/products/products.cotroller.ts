@@ -15,6 +15,7 @@ import {
 import { ProductsServive } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { Product } from './products.model';
+import { ConfigService } from 'src/config/config.service';
 
 @Controller('products')
 export class ProductsController {
@@ -44,6 +45,12 @@ export class ProductsController {
     if (version === '5') {
       return { url: 'https://docs.nestjs.com/v5' };
     }
+  }
+
+  @Get('env')
+  getEnv() {
+    // for rest global config module
+    return this.productService.getEnv();
   }
 
   @Get(':id')
