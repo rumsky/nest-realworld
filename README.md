@@ -148,5 +148,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 # Roadmap
 
 - ~~Env Configuration~~
+- Security
 - Hot reload (Webpack)
 - OpenAPI (Swagger)
