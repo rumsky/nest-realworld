@@ -5,6 +5,7 @@ import { join } from 'path';
 import * as helmet from 'helmet';
 import * as csurf from 'csurf';
 import * as cookieParser from 'cookie-parser';
+import * as rateLimit from 'express-rate-limit';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
@@ -16,6 +17,14 @@ async function bootstrap() {
 
   // security: helmet
   app.use(helmet());
+
+  // security: rate limiting
+  app.use(
+    rateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // limit each IP to 100 requests per windowMs
+    }),
+  );
 
   // global validation
   app.useGlobalPipes(new ValidationPipe());
