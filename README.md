@@ -145,9 +145,16 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 `$ npm install --save-dev @types/passport-local`
 
+## Security
+
+- Helmet
+- CORS
+- CSFR
+- Rate Limiting
+
 # Roadmap
 
 - ~~Env Configuration~~
 - ~~Security~~
-- Hot reload (Webpack)
+- GraphQL
 - OpenAPI (Swagger)

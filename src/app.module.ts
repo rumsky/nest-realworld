@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { GraphQLModule } from '@nestjs/graphql';
 import { CatsController } from './cats/cats.controller';
 import { UsersController } from './users/users.controller';
 import { CatsService } from './cats/cats.service';
@@ -23,6 +24,7 @@ import { ConfigModule } from './config/config.module';
       useUnifiedTopology: true,
     }),
     TypeOrmModule.forRoot(),
+    GraphQLModule.forRoot(),
     CatsModule,
     ProductsModule,
     AuthModule,
