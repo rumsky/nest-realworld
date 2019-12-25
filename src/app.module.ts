@@ -16,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TodosModule } from './todos/todos.module';
 import { ConfigModule } from './config/config.module';
+import { MinersModule } from './miners/miners.module';
 
 @Module({
   imports: [
@@ -24,13 +25,17 @@ import { ConfigModule } from './config/config.module';
       useUnifiedTopology: true,
     }),
     TypeOrmModule.forRoot(),
-    GraphQLModule.forRoot(),
+    GraphQLModule.forRoot({
+      installSubscriptionHandlers: true,
+      autoSchemaFile: 'schema.gql',
+    }),
     CatsModule,
     ProductsModule,
     AuthModule,
     UsersModule,
     TodosModule,
     ConfigModule,
+    MinersModule,
   ],
   controllers: [AppController, UsersController],
   providers: [AppService],

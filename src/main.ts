@@ -12,8 +12,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // security CSRF
-  app.use(cookieParser());
-  app.use(csurf({ cookie: true }));
+  // app.use(cookieParser());
+  // app.use(csurf({ cookie: true }));
 
   // security: helmet
   app.use(helmet());
