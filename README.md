@@ -156,5 +156,5 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 - ~~Env Configuration~~
 - ~~Security~~
-- GraphQL
+- ~~GraphQL~~
 - OpenAPI (Swagger)
